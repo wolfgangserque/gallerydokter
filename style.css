@@ -289,7 +289,6 @@ label {
   position: fixed;
   top: 0;
   width: 100%;
-background: #ffffff none repeat scroll 0 0;
 box-shadow: 0 -1px 0 #f5f5f5 inset;
 transition: height 0.3s ease-out 0s, background 0.3s ease-out 0s, box-shadow 0.3s ease-out 0s;
 z-index: 1030;
@@ -467,12 +466,13 @@ h1.breadcrumb-2 {
   z-index: 10;
 }
 .headroom--pinned {
-  background: #fff none repeat scroll 0 0;
+  background-image: url(img/bg/bg.jpg);
   box-shadow: 0 -1px 0 #f5f5f5 inset;
   transform: translateY(0px);
 }
 .headroom--unpinned {
   transform: translateY(-100%);
+  background-image: url(img/bg/bg.jpg);
 }
 .headroom {
   transition: transform 0.25s ease-in-out 0s;
