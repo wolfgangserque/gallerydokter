@@ -38,11 +38,30 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
   font-style: normal;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.025)), url('img/bg/bg.png');
 }
 .img,img{
  max-width: 100%;
 transition: all 0.3s ease-out 0s;
 }
+
+
+/* Fuse Library Recommendation */
+
+.hidden {
+  display: none;
+}
+.portfolio-container {
+  display: flex;
+  flex-direction: column;
+}
+.portfolio-item {
+  margin-bottom: 10px;
+}
+
+
+
+
 a,
 .button {
   -webkit-transition: all 0.3s ease-out 0s;
@@ -744,9 +763,6 @@ nav.nav-menu-show {
 .portfolio-caption {
   padding: 15px;
 }
-.caption-border {
-  border: 1px solid #f6f6f6;
-}
 /* portfolio style 2 */
 .portfolio-style-2{}
 .portfolio-style-2 .portfolio-caption {
@@ -916,7 +932,7 @@ margin: 0;}
 .footer-logo h3{
   font-weight: 600;
   margin: 0;
-  
+
 }
 .social-icon{}
 .social-icon a {
@@ -1563,6 +1579,8 @@ color: #ffffff;
         box-shadow: 0 0 0 45px rgba(194, 244, 246, 0);
     }
 }
+
+
 
 /* scrollUp */
 a#scrollUp {

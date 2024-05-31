@@ -1,23 +1,43 @@
-const search = document.querySelector(".search-box input"),
-      images = document.querySelectorAll(".image-box");
-
-search.addEventListener("keyup", e =>{
-    if(e.key == "Enter"){
-        let searcValue = search.value,
-            value = searcValue.toLowerCase();
-            images.forEach(image =>{
-                if(value === image.dataset.name){ //matching value with getting attribute of images
-                    return image.style.display = "block";
-                }
-                image.style.display = "none";
-            });
-    }
-});
-
-search.addEventListener("keyup", () =>{
-    if(search.value != "") return;
-
-    images.forEach(image =>{
-        image.style.display = "block";
-    })
-})
+document.addEventListener("DOMContentLoaded", function() {
+    const search = document.querySelector(".search-box input"),
+          portfolioContainer = document.querySelector(".portfolio-container"),
+          images = document.querySelectorAll(".image-box");
+  
+    const portfolioItems = Array.from(images).map(image => ({
+      element: image,
+      name: image.dataset.name
+    }));
+  
+    const options = {
+      keys: ['name'],
+      threshold: 0.3 // Sesuaikan nilai ini untuk lebih atau kurang pencarian fuzzy
+    };
+  
+    const fuse = new Fuse(portfolioItems, options);
+  
+    search.addEventListener("keyup", () => {
+      const searchValue = search.value;
+  
+      if (searchValue === "") {
+        portfolioItems.forEach(item => {
+          item.element.style.display = "block";
+          portfolioContainer.appendChild(item.element); // Pastikan elemen ditambahkan kembali ke container
+        });
+        return;
+      }
+  
+      const results = fuse.search(searchValue);
+  
+      // Sembunyikan semua item terlebih dahulu
+      portfolioItems.forEach(item => {
+        item.element.style.display = "none";
+      });
+  
+      // Tampilkan dan urutkan item sesuai hasil pencarian
+      results.forEach(result => {
+        result.item.element.style.display = "block";
+        portfolioContainer.appendChild(result.item.element); // Pindahkan elemen yang cocok ke paling atas
+      });
+    });
+  });
+  
