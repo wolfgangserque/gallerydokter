@@ -34,19 +34,7 @@
 @import url('css/hamburgers.min.css');
 @import url('css/animate.css');
 
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.025)), url('img/bg/bg.png');
-}
-.img,img{
- max-width: 100%;
-transition: all 0.3s ease-out 0s;
-}
 
-
-/* Fuse Library Recommendation */
 
 .hidden {
   display: none;
@@ -60,6 +48,16 @@ transition: all 0.3s ease-out 0s;
 }
 
 
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.025)), url('img/bg/bg.png');
+}
+.img,img{
+ max-width: 100%;
+transition: all 0.3s ease-out 0s;
+}
 
 
 a,
